@@ -1,6 +1,6 @@
 {
 	"name":"runrightfast-commons",
-	"version":"0.0.4",
+	"version":"0.0.5",
 	"description":"RunRightFast Commons",
 	"repository":{
 		"type":"git",
@@ -19,7 +19,9 @@
 	"dependencies":{
 		"lodash":"2.0.0",
 		"log4js":"0.6.8",
-		"hoek":"1.0.3"
+		"hoek":"1.0.3",
+		"events":"x.x.x",
+		"util":"x.x.x"
 	},
 	"devDependencies":{
 		"grunt":"~0.4.1",
