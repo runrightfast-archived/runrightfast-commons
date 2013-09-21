@@ -27,4 +27,15 @@ describe('logging utils', function() {
 		log.info(log);
 		log.debug('#getLogger - with no params, returns default logger');
 	});
+
+	it('#getLogger - with a name and invalid logLevel will throw an Error', function(done) {
+		try {
+			logging.getLogger('abc', 'DFSDFS');
+			done(new Error('expected an error because the logLevel is not valid'));
+		} catch (error) {
+			// expected
+			done();
+		}
+
+	});
 });
