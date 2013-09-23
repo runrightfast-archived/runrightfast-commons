@@ -17,9 +17,9 @@
 	"author":"Alfio Zappala",
 	"license":"Apache v2",
 	"dependencies":{
-		"lodash":"2.0.0",
-		"log4js":"0.6.8",
-		"hoek":"1.0.3",
+		"lodash":"2.0.x",
+		"log4js":"0.6.x",
+		"hoek":"1.0.x",
 		"events":"x.x.x",
 		"util":"x.x.x"
 	},
