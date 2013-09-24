@@ -26,4 +26,8 @@ describe('EventEmiiter', function() {
 		expect(counter).to.equal(0);
 
 	});
+
+	it('events module will always return the same instance', function() {
+		expect(require('../lib').events).to.equal(require('../lib').events);
+	});
 });

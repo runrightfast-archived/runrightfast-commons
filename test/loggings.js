@@ -38,4 +38,8 @@ describe('logging utils', function() {
 		}
 
 	});
+	
+	it('logging module will always return the same instance', function() {
+		expect(require('../lib').logging).to.equal(require('../lib').logging);
+	});
 });
