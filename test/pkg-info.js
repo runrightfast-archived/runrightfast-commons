@@ -14,7 +14,17 @@
  * the License.
  */
 
-module.exports.logging = require('./logging');
-module.exports.events = require('./events');
-module.exports.config = require('./config');
-module.exports.pkgInfo = require('./pkg-info');
+'use strict';
+var expect = require('chai').expect;
+
+var pkgInfo = require('../lib').pkgInfo;
+
+describe('pkgInfo', function() {
+
+	it('is the package.json as an object', function() {
+		console.log(pkgInfo);
+		expect(pkgInfo.name).to.equal('runrightfast-commons');
+		expect(pkgInfo.repository.url).to.equal('https://github.com/runrightfast/runrightfast-commons.git');
+	});
+
+});
