@@ -1,6 +1,6 @@
 {
 	"name":"runrightfast-commons",
-	"version":"0.0.7",
+	"version":"0.0.8",
 	"description":"RunRightFast Commons",
 	"repository":{
 		"type":"git",
@@ -10,7 +10,9 @@
 	"scripts":{
 		"blanket":{
 			"pattern":[
-				"lib/logging.js"
+				"lib/logging.js",
+				"lib/events.js",
+				"lib/config.js"
 			]
 		}		
 	},
