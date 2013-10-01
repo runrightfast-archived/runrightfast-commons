@@ -1,6 +1,6 @@
 {
 	"name":"runrightfast-commons",
-	"version":"0.0.10",
+	"version":"0.0.11",
 	"description":"RunRightFast Commons",
 	"repository":{
 		"type":"git",
@@ -20,11 +20,9 @@
 	"author":"Alfio Zappala",
 	"license":"Apache v2",
 	"dependencies":{
-		"lodash":"2.0.x",
+		"lodash":"2.2.x",
 		"log4js":"0.6.x",
-		"hoek":"1.0.x",
-		"events":"x.x.x",
-		"util":"x.x.x"
+		"hoek":"1.0.x"
 	},
 	"devDependencies":{
 		"grunt":"~0.4.1",
