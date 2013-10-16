@@ -1,6 +1,6 @@
 {
 	"name":"runrightfast-commons",
-	"version":"0.0.12",
+	"version":"0.0.13",
 	"description":"RunRightFast Commons",
 	"repository":{
 		"type":"git",
@@ -13,7 +13,7 @@
 				"lib/logging.js",
 				"lib/events.js",
 				"lib/config.js",
-				"lib/index.js"
+				"lib/entity.js"
 			]
 		}		
 	},
@@ -22,7 +22,8 @@
 	"dependencies":{
 		"lodash":"2.2.x",
 		"log4js":"0.6.x",
-		"hoek":"1.1.x"
+		"hoek":"1.1.x",
+		"uuid":"1.4.x"		
 	},
 	"devDependencies":{
 		"grunt":"~0.4.1",
