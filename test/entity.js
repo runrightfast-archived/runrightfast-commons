@@ -88,4 +88,92 @@ describe('Entity', function() {
 
 	});
 
+	it("can handle 'createdOn' specified as a String in ISO 8601 extended format", function(done) {
+		var now = new Date();
+		var props = {
+			createdOn : now.toISOString()
+		};
+
+		var entity = new Entity(props);
+		expect(entity.createdOn.getTime()).to.equal(now.getTime());
+
+		try {
+			entity = new Entity({
+				createdOn : 'INVALID DATE'
+			});
+			console.log('entity.createdOn.getTime() = ' + entity.createdOn.getTime());
+			console.log(JSON.stringify(entity, undefined, 2));
+			done(new Error('expected an Error to be thrown because createdOn is not a valid date'));
+		} catch (err) {
+			console.log(err);
+			done();
+		}
+	});
+
+	it("can handle 'createdOn' specified as EPOCH time", function(done) {
+		var now = new Date();
+		var props = {
+			createdOn : now.getTime()
+		};
+
+		var entity = new Entity(props);
+		expect(entity.createdOn.getTime()).to.equal(now.getTime());
+
+		try {
+			entity = new Entity({
+				createdOn : NaN
+			});
+			console.log('entity.createdOn.getTime() = ' + entity.createdOn.getTime());
+			console.log(JSON.stringify(entity, undefined, 2));
+			done(new Error('expected an Error to be thrown because createdOn is not a valid date'));
+		} catch (err) {
+			console.log(err);
+			done();
+		}
+	});
+
+	it("can handle 'updatedOn' specified as a String in ISO 8601 extended format", function(done) {
+		var now = new Date();
+		var props = {
+			updatedOn : now.toISOString()
+		};
+
+		var entity = new Entity(props);
+		expect(entity.updatedOn.getTime()).to.equal(now.getTime());
+
+		try {
+			entity = new Entity({
+				updatedOn : 'INVALID DATE'
+			});
+			console.log('entity.updatedOn.getTime() = ' + entity.updatedOn.getTime());
+			console.log(JSON.stringify(entity, undefined, 2));
+			done(new Error('expected an Error to be thrown because updatedOn is not a valid date'));
+		} catch (err) {
+			console.log(err);
+			done();
+		}
+	});
+
+	it("can handle 'updatedOn' specified as EPOCH time", function(done) {
+		var now = new Date();
+		var props = {
+			updatedOn : now.getTime()
+		};
+
+		var entity = new Entity(props);
+		expect(entity.updatedOn.getTime()).to.equal(now.getTime());
+
+		try {
+			entity = new Entity({
+				updatedOn : NaN
+			});
+			console.log('entity.updatedOn.getTime() = ' + entity.updatedOn.getTime());
+			console.log(JSON.stringify(entity, undefined, 2));
+			done(new Error('expected an Error to be thrown because updatedOn is not a valid date'));
+		} catch (err) {
+			console.log(err);
+			done();
+		}
+	});
+
 });
