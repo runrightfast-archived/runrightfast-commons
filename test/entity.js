@@ -40,7 +40,7 @@ describe('Entity', function() {
 			updatedOn : new Date(),
 			updatedBy : 'Alfio',
 			tags : [ 'tagA', 'tagB' ],
-			type : 'config'
+			_entityType : 'config'
 		};
 		var entity = new Entity(params);
 
@@ -49,6 +49,7 @@ describe('Entity', function() {
 		expect(entity.createdBy).to.equal(params.createdBy);
 		expect(entity.updatedBy).to.equal(params.updatedBy);
 		expect(lodash.size(lodash.difference(entity.tags, params.tags))).to.equal(0);
+		expect(entity._entityType).to.equal(params._entityType);
 
 		console.log(entity);
 
@@ -170,6 +171,34 @@ describe('Entity', function() {
 			console.log('entity.updatedOn.getTime() = ' + entity.updatedOn.getTime());
 			console.log(JSON.stringify(entity, undefined, 2));
 			done(new Error('expected an Error to be thrown because updatedOn is not a valid date'));
+		} catch (err) {
+			console.log(err);
+			done();
+		}
+	});
+
+	it("cannot handle 'updatedOn' for types other than Date, String, or Number", function(done) {
+		var props = {
+			updatedOn : {}
+		};
+
+		try {
+			new Entity(props);
+			done(new Error('expected an Error to be thrown because updatedOn is not a valid date'));
+		} catch (err) {
+			console.log(err);
+			done();
+		}
+	});
+	
+	it("cannot handle 'createOn' for types other than Date, String, or Number", function(done) {
+		var props = {
+				createdOn : {}
+		};
+
+		try {
+			new Entity(props);
+			done(new Error('expected an Error to be thrown because createOn is not a valid date'));
 		} catch (err) {
 			console.log(err);
 			done();
