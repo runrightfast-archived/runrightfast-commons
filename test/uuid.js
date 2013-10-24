@@ -14,8 +14,13 @@
  * the License.
  */
 
-module.exports.logging = require('./logging');
-module.exports.events = require('./events');
-module.exports.config = require('./config');
-module.exports.Entity = require('./entity');
-module.exports.uuid = require('./uuid');
+'use strict';
+var expect = require('chai').expect;
+
+var uuid = require('..').uuid;
+
+describe('logging utils', function() {
+	it('generates uuids that are 32 chars long', function() {
+		expect(uuid().length).to.equal(32);
+	});
+});
