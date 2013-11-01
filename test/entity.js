@@ -183,7 +183,7 @@ describe('Entity', function() {
 		};
 
 		try {
-			new Entity(props);
+			console.log(new Entity(props));
 			done(new Error('expected an Error to be thrown because updatedOn is not a valid date'));
 		} catch (err) {
 			console.log(err);
@@ -197,7 +197,7 @@ describe('Entity', function() {
 		};
 
 		try {
-			new Entity(props);
+			console.log(new Entity(props));
 			done(new Error('expected an Error to be thrown because createOn is not a valid date'));
 		} catch (err) {
 			console.log(err);

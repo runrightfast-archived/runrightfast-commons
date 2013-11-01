@@ -26,6 +26,7 @@ describe('EventEmiiter', function() {
 	it('emits events synchronously', function(done) {
 		var eventEmitter = new events.AsyncEventEmitter();
 		var counter = 0;
+		var i;
 		eventEmitter.on('event', function() {
 			console.log(counter);
 			counter++;
@@ -34,7 +35,7 @@ describe('EventEmiiter', function() {
 			}
 		});
 
-		for ( var i = 0; i < 10; i++) {
+		for (i = 0; i < 10; i++) {
 			eventEmitter.emit('event');
 			console.log('emitted event : ' + i);
 		}
